@@ -1,4 +1,9 @@
 PODS:
+  - BSGridCollectionViewLayout (1.2.5)
+  - BSImagePicker (2.10.3):
+    - BSGridCollectionViewLayout (= 1.2.5)
+    - BSImageView (= 1.0.3)
+  - BSImageView (1.0.3)
   - Flutter (1.0.0)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -11,6 +16,9 @@ PODS:
   - GoogleMaps/Base (3.9.0)
   - GoogleMaps/Maps (3.9.0):
     - GoogleMaps/Base
+  - multi_image_picker (4.7.14):
+    - BSImagePicker (~> 2.10.3)
+    - Flutter
   - path_provider (0.0.1):
     - Flutter
   - sqflite (0.0.2):
@@ -20,11 +28,15 @@ PODS:
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - google_maps_flutter (from `.symlinks/plugins/google_maps_flutter/ios`)
+  - multi_image_picker (from `.symlinks/plugins/multi_image_picker/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - sqflite (from `.symlinks/plugins/sqflite/ios`)
 
 SPEC REPOS:
   trunk:
+    - BSGridCollectionViewLayout
+    - BSImagePicker
+    - BSImageView
     - FMDB
     - GoogleMaps
 
@@ -33,16 +45,22 @@ EXTERNAL SOURCES:
     :path: Flutter
   google_maps_flutter:
     :path: ".symlinks/plugins/google_maps_flutter/ios"
+  multi_image_picker:
+    :path: ".symlinks/plugins/multi_image_picker/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
   sqflite:
     :path: ".symlinks/plugins/sqflite/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  BSGridCollectionViewLayout: 333dcb457a5a3bdd9212607ab5756553dcfe06cb
+  BSImagePicker: 07404254f2fcdaf5a2eb403c0f8c337267ce8738
+  BSImageView: a149459433a2687157d034c78e059d30ac7f2544
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   google_maps_flutter: c7f9c73576de1fbe152a227bfd6e6c4ae8088619
   GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
+  multi_image_picker: c068931d08240565e0615fb01437d16984909183
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
 

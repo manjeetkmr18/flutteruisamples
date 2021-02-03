@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mapsdemo/size_config.dart';
 
-
-import 'dialogsdemo.dart';
+import 'bottomRibbon.dart';
 import 'maps_demo.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -20,11 +20,26 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Test',
-              home: DialogsDemo(),
+              // home: MyHomePage(),
+              home: HomeP(),
             );
           },
         );
       },
+    );
+  }
+}
+
+
+class HomeP extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: <Widget>[
+          BottomRibbon(),
+        ],
+      ),
     );
   }
 }

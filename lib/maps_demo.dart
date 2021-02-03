@@ -1,15 +1,24 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
 import 'package:mapsdemo/size_config.dart';
+import 'bottomRibbon.dart';
 import 'bottomicons.dart';
+import 'bottommodel.dart';
 
 class MapsDemo extends StatefulWidget {
   @override
   _MapsDemoState createState() => _MapsDemoState();
 }
 
-class _MapsDemoState extends State<MapsDemo> {
+class _MapsDemoState extends State<MapsDemo>
+    with SingleTickerProviderStateMixin {
+  PageController pageController = PageController();
+  bool isButtonClicked = false;
+  int pagenumber = 0;
+
   var markers = <Marker>[
     Marker(
       width: 30.0,
@@ -69,6 +78,7 @@ class _MapsDemoState extends State<MapsDemo> {
       'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80';
   @override
   Widget build(BuildContext context) {
+    print(isButtonClicked);
     return Scaffold(
       backgroundColor: Colors.grey[700],
       body: Stack(
@@ -81,7 +91,7 @@ class _MapsDemoState extends State<MapsDemo> {
             layers: [
               TileLayerOptions(
                 urlTemplate:
-                    'https://api.mapbox.com/styles/v1/manjeetkmr18/ckj2snsb1awoa19s39gljzytb/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFuamVldGttcjE4IiwiYSI6ImNrajMzNHNuZDI4MHozMG54cHJpNnZmbW0ifQ.jn7t-kAj-9GNmhwzoPCnsw',
+                    'https://api.mapbox.com/styles/v1/manjeetkmr18/ckkcl4a5h1yq517mnj7564pw7/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFuamVldGttcjE4IiwiYSI6ImNrajMzNHNuZDI4MHozMG54cHJpNnZmbW0ifQ.jn7t-kAj-9GNmhwzoPCnsw',
                 additionalOptions: {
                   'accessToken':
                       'pk.eyJ1IjoibWFuamVldGttcjE4IiwiYSI6ImNrajMzNWNjczA3bmQyeW5xemI4bjFwcWoifQ.SEKTc29XOP0NnMfDpBzKIA',
@@ -102,8 +112,8 @@ class _MapsDemoState extends State<MapsDemo> {
                     Container(
                       width: 50 * SizeConfig.widthMultiplier,
                       height: 6 * SizeConfig.heightMultiplier,
-                      margin:
-                          EdgeInsets.only(top: 1.5 * SizeConfig.heightMultiplier),
+                      margin: EdgeInsets.only(
+                          top: 1.5 * SizeConfig.heightMultiplier),
                       decoration: BoxDecoration(
                           color: Colors.grey[700],
                           border: Border.all(color: Colors.grey, width: 1),
@@ -150,8 +160,6 @@ class _MapsDemoState extends State<MapsDemo> {
                       ),
                     ),
                     Container(
-                      // height: displayHeight(context) * 0.09,
-                      // width: displayWidth(context) * .16,
                       height: 9 * SizeConfig.heightMultiplier,
                       width: 14 * SizeConfig.widthMultiplier,
                       decoration: BoxDecoration(
@@ -194,6 +202,10 @@ class _MapsDemoState extends State<MapsDemo> {
               ],
             ),
           ),
+
+          // isButtonClicked ? bottomRibbon() : bottomRibbonButton(),
+      BottomRibbon(),  
+
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
@@ -227,7 +239,6 @@ class _MapsDemoState extends State<MapsDemo> {
                             count: '1',
                             percentage: 35.5,
                           ),
-                          
                         ],
                       ),
                     ),
@@ -251,7 +262,7 @@ class _MapsDemoState extends State<MapsDemo> {
                           )
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

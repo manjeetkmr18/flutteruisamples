@@ -49,7 +49,7 @@ class GenderSelector extends StatefulWidget {
 }
 
 class _GenderSelectorState extends State<GenderSelector> {
-  List<Gender> genders = new List<Gender>();
+  List<Gender> genders = [];
 
   @override
   void initState() {

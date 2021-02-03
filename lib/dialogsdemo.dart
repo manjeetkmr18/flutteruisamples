@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 class DialogsDemo extends StatelessWidget {
@@ -198,7 +196,6 @@ class CustonDialog3 extends StatelessWidget {
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
         child: Stack(
-          overflow: Overflow.visible,
           alignment: Alignment.topCenter,
           children: [
             Container(
