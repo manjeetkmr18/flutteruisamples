@@ -16,9 +16,10 @@ class _MyHomeState extends State<MyHome> {
   @override
   void initState() {
     super.initState();
-
     rootBundle.loadString('assets/nightmode.json').then((string) {
-      _mapStyle = string;
+      setState(() {
+        _mapStyle = string;
+      });
     }).catchError(
       (onError) {
         print(onError.toString());

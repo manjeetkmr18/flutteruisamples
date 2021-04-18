@@ -191,6 +191,7 @@ class AlertDialog1 extends StatelessWidget {
 class CustonDialog3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Dialog(
         backgroundColor: Color(0xFF222020).withOpacity(0.75),
         shape:
@@ -199,7 +200,7 @@ class CustonDialog3 extends StatelessWidget {
           alignment: Alignment.topCenter,
           children: [
             Container(
-              height: 260,
+              height: size.height * 0.3,
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(30, 70, 30, 10),
                 child: Column(
@@ -254,7 +255,7 @@ class CustonDialog3 extends StatelessWidget {
                         Navigator.of(context).pop();
                       },
                       padding: EdgeInsets.only(
-                          left: 100, right: 100, top: 10, bottom: 10),
+                          left: size.width * 0.1, right:  size.width * 0.1, top: size.width * 0.05, bottom:  size.width * 0.05),
                       color: Colors.green,
                       elevation: 8,
                       shape: RoundedRectangleBorder(
@@ -269,7 +270,7 @@ class CustonDialog3 extends StatelessWidget {
               ),
             ),
             Positioned(
-                top: -80,
+                bottom: 200,
                 child: Image.asset(
                   'assets/images/stars.png',
                   height: 150,
